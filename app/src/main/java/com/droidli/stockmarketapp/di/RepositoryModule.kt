@@ -4,6 +4,7 @@ import com.droidli.stockmarketapp.data.csv.CSVParser
 import com.droidli.stockmarketapp.data.csv.CompanyListingParser
 import com.droidli.stockmarketapp.data.repository.StockRepositoryImpl
 import com.droidli.stockmarketapp.domain.model.CompanyListing
+import com.droidli.stockmarketapp.domain.model.IntradayInfo
 import com.droidli.stockmarketapp.domain.repository.StockRepository
 import dagger.Binds
 import dagger.Module
@@ -20,6 +21,12 @@ abstract class RepositoryModule {
     abstract fun bindCompanyListingsParser(
         companyListingsParser: CompanyListingParser
     ): CSVParser<CompanyListing>
+
+    @Binds
+    @Singleton
+    abstract fun bindIntradayInfoParser(
+        intradayInfoParser: IntradayInfo
+    ): CSVParser<IntradayInfo>
 
     @Binds
     @Singleton
